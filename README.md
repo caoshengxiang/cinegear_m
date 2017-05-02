@@ -1,4 +1,5 @@
-# wangEditor_webpack
-h5编辑器
+# 商城移动端
 
-# 修改wangEditor编辑器源码，并迁移到webpack
+
+
+# webpack2+vue2+vuex2+vue-router2 less(sass)

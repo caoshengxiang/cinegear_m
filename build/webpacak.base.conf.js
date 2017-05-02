@@ -20,7 +20,8 @@ module.exports = function (env) {
         output: { // 出口
             path: path.join(__dirname, '/../dist'),
             filename: 'js/[name].min.js',
-            // publicPath: '/', // webpack-dev-server 伺服的文件是相对 publicPath 这个路径的, 在 index.html 文件当中引入的路径也发生相应的变化: 如：<script src="assets/index.js"></script>
+
+            publicPath: env.env==='dev'?'/':'./', // webpack-dev-server 伺服的文件是相对 publicPath 这个路径的, 在 index.html 文件当中引入的路径也发生相应的变化: 如：<script src="assets/index.js"></script>
         },
         resolve: {
             //设置可省略文件后缀名(注:如果有文件没有后缀设置''会在编译时会报错,必须改成' '中间加个空格。ps:虽然看起来很强大但有时候省略后缀真不知道加载是啥啊~);
@@ -55,7 +56,7 @@ module.exports = function (env) {
                         loaders: {
                             js: 'babel-loader',
                             css: "vue-style-loader!css-loader",
-                            // sass: "vue-style-loader!css-loader!sass-loader",
+                            sass: "vue-style-loader!css-loader!sass-loader",
                             less: "vue-style-loader!css-loader!less-loader",
                         }
                     }
@@ -69,7 +70,7 @@ module.exports = function (env) {
                 //     })
                 // },
 
-                // css/less 自动添加厂商前缀
+                // css/less 使用postcss-loader自动添加厂商前缀
                 {
                     test: /\.(less|css)$/,
                     use: ExtractTextPlugin.extract({ // 打包css
