@@ -1,9 +1,11 @@
 <template>
     <div>
-        <ul>
-            <li>tttt2222 </li>
-        </ul>
-
+        <mt-button
+                type="primary"
+                @click="meth">
+            选择操作
+        </mt-button>
+        <mt-badge size="small" color="green">30</mt-badge>
     </div>
 </template>
 <script>
@@ -12,16 +14,24 @@
         name: '',
         props: {},
         data() {
-            return {}
+            return {
+                loading: false,
+                list: [1,2,3,4,5,6,7,8]
+            }
         },
         computed: {},
-        methods: {},
+        methods: {
+            meth() {
+                this.$toast('Hello world')
+            },
+
+        },
         components: {},
         created() {
         }
     }
 </script>
-<style lang="less" rel="stylesheet/less" scoped>
+<style lang="sass" rel="stylesheet/scss" scoped>
     div {
         ul {
             li {
