@@ -55,27 +55,36 @@ module.exports = function (env) {
                     options: { // vue文件中sass、less等
                         loaders: {
                             js: 'babel-loader',
-                            css: "vue-style-loader!css-loader",
-                            sass: "vue-style-loader!css-loader!sass-loader",
-                            less: "vue-style-loader!css-loader!less-loader",
+                            css: "vue-style-loader!css-loader!postcss-loader",
+                            less: "vue-style-loader!css-loader!postcss-loader!less-loader",
+                            sass: "vue-style-loader!css-loader!postcss-loader!sass-loader",
+                            scss: 'vue-style-loader!css-loader!postcss-loader!sass-loader',
                         }
                     }
                 },
                 // css
-                // {
-                //     test: /\.css$/,
-                //     use: ExtractTextPlugin.extract({
-                //         fallback: "style-loader",
-                //         use: "css-loader"
-                //     })
-                // },
+                {
+                    test: /\.css$/,
+                    use: ExtractTextPlugin.extract({
+                        fallback: "style-loader",
+                        use: ['css-loader','postcss-loader']
+                    })
+                },
 
                 // css/less 使用postcss-loader自动添加厂商前缀
                 {
-                    test: /\.(less|css)$/,
+                    test: /\.(less)$/,
                     use: ExtractTextPlugin.extract({ // 打包css
                         fallback: 'style-loader',
                         use: ['css-loader','postcss-loader', 'less-loader']
+                    })
+                },
+                // css/sass 使用postcss-loader自动添加厂商前缀
+                {
+                    test: /\.(sass|scss)$/,
+                    use: ExtractTextPlugin.extract({ // 打包css
+                        fallback: 'style-loader',
+                        use: ['css-loader','postcss-loader', 'sass-loader']
                     })
                 },
                 {
