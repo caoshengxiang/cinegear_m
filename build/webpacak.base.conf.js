@@ -59,6 +59,7 @@ module.exports = function (env) {
                             less: "vue-style-loader!css-loader!postcss-loader!less-loader",
                             sass: "vue-style-loader!css-loader!postcss-loader!sass-loader",
                             scss: 'vue-style-loader!css-loader!postcss-loader!sass-loader',
+                            i18n: '@kazupon/vue-i18n-loader'
                         }
                     }
                 },

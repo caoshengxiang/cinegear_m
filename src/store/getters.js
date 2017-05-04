@@ -1,3 +1,9 @@
 /**
- * Created by allen on 17-3-13.
+ * Created by allen on 17-4-14.
  */
+
+export default {
+  getterTest (st) {
+    return 'allen: ' + st.test
+  }
+}

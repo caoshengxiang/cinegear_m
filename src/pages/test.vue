@@ -1,5 +1,18 @@
+<i18n>
+    {
+        "cn": {
+            "name": "组件"
+        },
+        "en": {
+            "name": "component"
+        }
+    }
+</i18n>
 <template>
     <div>
+        <set-lang></set-lang>
+        <div>{{$t('name')}}</div>
+
         <mt-button
                 type="primary"
                 @click="meth">
@@ -9,9 +22,10 @@
     </div>
 </template>
 <script>
+    import setLang from '../components/set_lang.vue'
 
     export default {
-        name: '',
+        name: 'Test',
         props: {},
         data() {
             return {
@@ -24,9 +38,10 @@
             meth() {
                 this.$toast('Hello world')
             },
-
         },
-        components: {},
+        components: {
+            setLang,
+        },
         created() {
         }
     }

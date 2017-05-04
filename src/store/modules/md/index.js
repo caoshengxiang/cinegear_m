@@ -8,8 +8,7 @@ import mutations from './mutations'
 export default {
   namespaced: true,
   state: {
-    lang_m: '123',
-    test: 'ttt'
+    lang: 'cn',
   },
   getters,
   actions,

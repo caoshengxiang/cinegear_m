@@ -12,6 +12,7 @@
   "license": "ISC",
   "repository": "",
   "devDependencies": {
+    "@kazupon/vue-i18n-loader": "^0.1.1",
     "autoprefixer": "^6.7.7",
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
