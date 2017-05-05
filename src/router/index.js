@@ -13,10 +13,6 @@ const home = resolve => require.ensure([], () => resolve(require('../pages/home/
 const signIn = resolve => require.ensure([], () => resolve(require('../components/sign_in.vue')), 'sign')
 const signUp = resolve => require.ensure([], () => resolve(require('../components/sign_up.vue')), 'sign')
 
-
-
-
-
 export default new Router({
     // mode: 'history', // 这个模式路由没有#
     routes: [

@@ -11,6 +11,12 @@ var autoprefixer = require('autoprefixer');
 // 这是一个Webpack插件，可以将单个文件或整个目录复制到构建目录中。
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 
+var path = require('path')
+function resolve (dir) {
+    return path.join(__dirname, '..', dir)
+}
+
+
 module.exports = function (env) {
     return {
         // context: __dirname + '../src',
@@ -43,12 +49,15 @@ module.exports = function (env) {
                 // eslint
                 {
                     test: /\.(js|vue)$/,
-                    loader: 'eslint-loader',
                     enforce: 'pre',
                     include: [resolve('src'), resolve('test')],
-                    options: {
-                        formatter: require('eslint-friendly-formatter')
-                    }
+                    use: [{
+                        loader: 'eslint-loader',
+                        options: {
+                            formatter: require('eslint-friendly-formatter')
+                        }
+                    }],
+                    // exclude: /node_modules/, // 可以不用定义这个字段的属性值，eslint会自动忽略node_modules和bower_
                 },
 
                 // 解析js文件，用babel编译es6
@@ -99,6 +108,7 @@ module.exports = function (env) {
                         use: ['css-loader','postcss-loader', 'sass-loader']
                     })
                 },
+                // 图片
                 {
                     test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                     use: [

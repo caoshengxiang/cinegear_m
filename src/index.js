@@ -10,7 +10,6 @@ import 'mint-ui/lib/style.css'
 import './styles/basic.scss'
 import i18n from './i18n'
 
-
 Vue.use(Mint);
 
 new Vue({

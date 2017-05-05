@@ -17,7 +17,7 @@
     export default {
         name: 'signIn',
         props: {},
-        data() {
+        data () {
             return {
                 form: {
                     username: '',
@@ -30,5 +30,7 @@
         components: {},
     }
 </script>
+
 <style lang="sass" rel="stylesheet/scss" scoped>
+
 </style>

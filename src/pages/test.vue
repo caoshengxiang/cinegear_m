@@ -38,7 +38,7 @@
     export default {
         name: 'Test',
         props: {},
-        data() {
+        data () {
             return {
                 placeholder: this.$t('placeholder')
             }
@@ -50,7 +50,7 @@
         },
         computed: {},
         methods: {
-            meth() {
+            meth () {
                 this.$toast(this.$t('say'))
             },
         },

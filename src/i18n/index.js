@@ -6,7 +6,7 @@ import VueI18n from 'vue-i18n'
 import './mixin'
 Vue.use(VueI18n)
 
-import messages from './i18n_data'
+// import messages from './i18n_data'
 
 export default new VueI18n({
   locale: 'cn',

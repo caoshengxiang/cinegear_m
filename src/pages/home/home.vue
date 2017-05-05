@@ -19,21 +19,19 @@
     export default {
         name: 'home',
         props: {},
-        data() {
+        data () {
             return {}
         },
         computed: {},
         methods: {
-            signIn() {
+            signIn () {
                 this.$router.push('sign_in')
             },
-            signUp() {
+            signUp () {
                 this.$router.push('sign_up')
             }
         },
-        components: {
-
-        },
+        components: {},
     }
 </script>
 <style lang="sass" rel="stylesheet/scss" scoped>

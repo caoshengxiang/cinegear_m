@@ -32,11 +32,8 @@
                 <mt-button type="default" @click="captcha()">获取</mt-button>
             </mt-field>
 
-
             <mt-button type="danger" size="large">注册</mt-button>
         </div>
-
-
     </div>
 </template>
 <script>
@@ -44,7 +41,7 @@
     export default {
         name: '',
         props: {},
-        data() {
+        data () {
             return {
                 promise: true,
                 form: {
@@ -54,16 +51,14 @@
                     phone: '',
                     captcha: ''
                 }
-
-
             }
         },
         computed: {},
         methods: {
-            toSignUp() {
+            toSignUp () {
                 this.promise = false
             },
-            captcha() {
+            captcha () {
                 this.$toast('验证码发出,请查收')
             }
         },
