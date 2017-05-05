@@ -19,9 +19,9 @@
         </div>
         <div v-else>
             <mt-header title="用户注册">
-                <router-link to="/" slot="left">
+                <span @click="goBack()" slot="left">
                     <mt-button icon="back">返回</mt-button>
-                </router-link>
+                </span>
                 <!--<mt-button icon="more" slot="right"></mt-button>-->
             </mt-header>
             <mt-field label="用户名" placeholder="请输入用户名" v-model="form.username"></mt-field>
@@ -39,11 +39,11 @@
 <script>
 
     export default {
-        name: '',
+        name: 'signUp',
         props: {},
         data () {
             return {
-                promise: true,
+                promise: false,
                 form: {
                     username: '',
                     password: '',
@@ -60,6 +60,9 @@
             },
             captcha () {
                 this.$toast('验证码发出,请查收')
+            },
+            goBack() {
+                this.$router.go(-1)
             }
         },
         components: {},

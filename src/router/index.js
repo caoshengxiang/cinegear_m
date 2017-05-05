@@ -10,8 +10,8 @@ Vue.use(Router)
 const test = resolve => require.ensure([], () => resolve(require('../pages/test.vue')), 'test')
 
 const home = resolve => require.ensure([], () => resolve(require('../pages/home/home.vue')), 'home')
-const signIn = resolve => require.ensure([], () => resolve(require('../components/sign_in.vue')), 'sign')
-const signUp = resolve => require.ensure([], () => resolve(require('../components/sign_up.vue')), 'sign')
+const signIn = resolve => require.ensure([], () => resolve(require('../pages/sign/sign_in.vue')), 'sign')
+const signUp = resolve => require.ensure([], () => resolve(require('../pages/sign/sign_up.vue')), 'sign')
 
 export default new Router({
     // mode: 'history', // 这个模式路由没有#
