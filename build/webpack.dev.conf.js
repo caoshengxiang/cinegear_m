@@ -19,7 +19,7 @@ module.exports = function (env) {
         /* server */
         devServer: {    // 设置本地Server;
             contentBase: path.join(__dirname, '/../dist'),  // 设置启动文件目录;
-            host: 'localhost', // 主机或IP
+            host: '192.168.1.38', // 主机或IP
             port: 8888,      // 设置端口号；
             compress: true, // 设置gzip压缩;
             inline: true,  // 开启更新客户端入口(可在package.json scripts 里设置 npm run xxx);

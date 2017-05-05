@@ -1,11 +1,18 @@
 <i18n>
     {
-        "cn": {
-            "name": "组件"
-        },
-        "en": {
-            "name": "component"
-        }
+    "cn": {
+    "name": "组件",
+    "operate": "操作",
+    "placeholder": "用户名",
+    "say": "你好世界"
+
+    },
+    "en": {
+    "name": "component",
+    "operate": "operate",
+    "placeholder": "username",
+    "say": "hello world"
+    }
     }
 </i18n>
 <template>
@@ -13,12 +20,16 @@
         <set-lang></set-lang>
         <div>{{$t('name')}}</div>
 
+        <input type="text" :placeholder="placeholder">
         <mt-button
                 type="primary"
                 @click="meth">
-            选择操作
+            {{ $t('operate') }}
         </mt-button>
         <mt-badge size="small" color="green">30</mt-badge>
+
+        <a href="tel:15881182238">打电话</a>
+        <a href="sms:15881182238">发短信</a>
     </div>
 </template>
 <script>
@@ -29,14 +40,18 @@
         props: {},
         data() {
             return {
-                loading: false,
-                list: [1,2,3,4,5,6,7,8]
+                placeholder: this.$t('placeholder')
+            }
+        },
+        watch: {
+            lang () {
+                this.placeholder = this.$t('placeholder')
             }
         },
         computed: {},
         methods: {
             meth() {
-                this.$toast('Hello world')
+                this.$toast(this.$t('say'))
             },
         },
         components: {

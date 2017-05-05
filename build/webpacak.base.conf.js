@@ -40,6 +40,17 @@ module.exports = function (env) {
         },
         module: {
             rules: [
+                // eslint
+                {
+                    test: /\.(js|vue)$/,
+                    loader: 'eslint-loader',
+                    enforce: 'pre',
+                    include: [resolve('src'), resolve('test')],
+                    options: {
+                        formatter: require('eslint-friendly-formatter')
+                    }
+                },
+
                 // 解析js文件，用babel编译es6
                 {
                     test: /\.js/,

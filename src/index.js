@@ -7,7 +7,7 @@ import App from './app.vue'
 import store from './store'
 import Mint from 'mint-ui'
 import 'mint-ui/lib/style.css'
-
+import './styles/basic.scss'
 import i18n from './i18n'
 
 
